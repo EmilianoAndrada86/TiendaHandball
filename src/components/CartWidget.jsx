@@ -12,10 +12,6 @@ function CartWidget() {
     return(
         
          <img src={Imagen} style={imgStyle} />
-       
-        
-
-
     )
 
 
