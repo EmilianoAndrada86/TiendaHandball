@@ -7,9 +7,9 @@ function ItemCount ({initial,stock,onAdd}){
 
         <div className="d-grip gap-2">
             <ListGroup horizontal>
-            <ListGroup.Item variant="primary"><Button variant="primary"  onClick={()=>{setCantidad(cantidad+1)}}>Aumentar Stock</Button></ListGroup.Item>
+            <ListGroup.Item variant="primary"><Button variant="primary"  onClick={()=>{cantidad>1 ?setCantidad(cantidad-1):console.log('Error');}}>-</Button></ListGroup.Item>
             <ListGroup.Item variant="primary">{cantidad}</ListGroup.Item>
-            <ListGroup.Item variant="primary"><Button variant="primary"  onClick={()=>{setCantidad(cantidad-1)}}>Disminuir Stock</Button></ListGroup.Item>
+            <ListGroup.Item variant="primary"><Button variant="primary"  onClick={()=>{setCantidad(cantidad+1)}}>+</Button></ListGroup.Item>
             </ListGroup>
             <div className="row justify-content-center">
             <Button className="text-center" variant="primary" size="lg" onClick={()=>{cantidad>stock ? alert("No hay suficiente stock"): onAdd(cantidad)}}>Agregar Al Carrito</Button>
