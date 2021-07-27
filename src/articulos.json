@@ -1,0 +1,32 @@
+{"articulos": [
+{ "id":1,
+    "nombre":"Zapatiilas",
+    "stock":5,
+    "url":"/img/zapas.jpeg",
+    "desc":"Altas Zapas"
+},
+{ "id":2,
+    "nombre":"Camiseta",
+    "stock":3,
+    "url":"/img/camiseta.jpg",
+    "desc":"Altas Camiseta"
+},
+{ "id":3,
+    "nombre":"Arquero",
+    "stock":8,
+    "url":"/img/arquero.jpg",
+    "desc":"Alto Arquero"
+},
+{ "id":4,
+    "nombre":"Medias",
+    "stock":1,
+    "url":"/img/medias.jpg",
+    "desc":"Altas Medias"
+},
+{   "id":5,
+    "nombre":"Protectores",
+    "stock":6,
+    "url":"/img/protectores.jpg",
+    "desc":"Altas Huevera"
+}
+]}

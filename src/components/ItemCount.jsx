@@ -1,6 +1,7 @@
 import { Button,ListGroup } from "react-bootstrap"
 import { useState } from 'react';
 
+
 function ItemCount ({initial,stock,onAdd}){
     const [cantidad,setCantidad]=useState(initial)
     return(
