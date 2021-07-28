@@ -1,26 +1,33 @@
 import { useEffect, useState } from "react"
 import ItemDetail from "./ItemDetail"
+import articulos from "../articulos.json"
+import {useParams} from 'react-router-dom'
+
 const GetITem=(key)=>{
-    const [desc,setDesc] = useState("no hay descripcion");
-    
-            fetch("http://localhost:4000/articulos")
-            .then((data)=>data.json())
-            .then((res)=>{res.map((producto)=>{setTimeout(()=>{if(producto.id===key){setDesc(producto.desc)}})},2000)})
-             return desc
+    const [item,setItem] = useState([1,2]);
+        useEffect(()=>{
+            const task  = new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve(articulos)
+                },2000)
+            })
+            
+            task.then((item)=>{item.articulos.map((it)=>{if(it.id==key) {setItem(it)} })})
+        })    
+             return item
         }
+function GetKey(){
+    let {id} = useParams()
+    return id
+}
              
 
 function ItemDetailContainer(props){
-
+    
     return(
-    <ItemDetail detalle={GetITem(props.id)} />
-
+    <ItemDetail item={GetITem(GetKey())} />
 )
-
-
 
 }
 
 export default ItemDetailContainer
-
-//(producto)=>{if(producto.id===key){return producto.desc}else{return "No hay descripcion"}})

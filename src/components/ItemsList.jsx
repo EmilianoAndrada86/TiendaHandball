@@ -18,18 +18,11 @@ function GetItems(){
         task.then((productos)=>{setArt(productos.articulos)})
    },[])  
    return art;
-
    }
-
 function Itemlist(props){
-   
-   
-    
     return(
        GetItems().map(it=>{return (<Item item={it} />)})
-
-    )
-         
+    )     
 }
 
 

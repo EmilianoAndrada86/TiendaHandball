@@ -2,17 +2,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar';
 import './App.css';
 import ItemListContainer from './components/ItemListContainer';
-import productos from'./articulos.json'
-import { useState } from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
  
   return (
-    <>
+    <Router>
     <NavBar />
-    <h1>Hola</h1>
-    <ItemListContainer productos={productos} />
-    </>
+    <Switch>
+    <Route exact path="/">
+    <ItemListContainer />
+    </Route>
+    <Route path="/item/:id">
+    <ItemDetailContainer />
+    </Route>
+    </Switch>
+    </Router>
   )
 
   }

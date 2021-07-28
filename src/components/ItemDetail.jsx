@@ -1,13 +1,25 @@
-import {Alert} from 'react-bootstrap'
+import {ListGroup,Card,CardGroup} from 'react-bootstrap'
+import ItemCount from './ItemCount'
 
-function ItemDetail(props){ 
-    console.log("props item detail")
-    console.log(props)
+function ItemDetail({item}){ 
+    function onAdd(cantidadAgregada,producto){
+        alert("Has agregado "+cantidadAgregada+" del producto")
+         }
     return(
     
-        <Alert variant="primary">
-        {props.detalle}
-        </Alert>
+        <CardGroup>
+                        <ListGroup.Item key={1} variant="primary" className="cointainer">
+                        <Card style={{ width: '100%' }}>
+                        <Card.Img variant="top" src={process.env.PUBLIC_URL + item.url}  />
+                        <Card.Body>
+                        <Card.Title>{item.nombre}</Card.Title>
+                        <ItemCount initial={1} stock={2} onAdd={onAdd} />
+                        </Card.Body>
+                        </Card>
+                        </ListGroup.Item>
+
+        </CardGroup>   
+
 
     )
     
