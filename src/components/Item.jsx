@@ -1,26 +1,26 @@
 import { useState, useEffect } from "react"
+import {Card} from 'react-bootstrap'
 
-function producto(id,nombre,stock,imagen){
-    this.id=id; 
-    this.nombre=nombre;
-    this.stock=stock;
-    this.imagen=imagen;
-}
 
-function Item({id,nombre,stock,imagen}){
-    const articulo = new producto(id,nombre,stock,imagen)
+
+function Item({item}){
+
+
+return(
     
-    const [item,setItem]=useState(articulo)
-useEffect(()=>{
-   
-   
-    const task = new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-            resolve = articulo
-        },3000)
-
-    })
-    return task.then((resp)=>setItem(resp)).catch((err)=>{console.log(err)})
-})
+    <Card style={{ width: '18rem' }}>
+        <Card.Body>
+            <Card.Title>{item.nombre}</Card.Title>
+            <Card.Subtitle className="mb-2 text-muted">{item.id}</Card.Subtitle>
+            <Card.Text>
+            Some quick example text to build on the card title and make up the bulk of
+            the card's content.
+            </Card.Text>
+            <Card.Link href="#">Ver Detalle</Card.Link>
+            
+  </Card.Body>
+    </Card>
+    
+)
 }
 export default Item
