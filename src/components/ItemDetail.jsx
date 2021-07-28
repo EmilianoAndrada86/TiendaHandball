@@ -13,7 +13,7 @@ function ItemDetail({item}){
                         <Card.Img variant="top" src={process.env.PUBLIC_URL + item.url}  />
                         <Card.Body>
                         <Card.Title>{item.nombre}</Card.Title>
-                        <ItemCount initial={1} stock={2} onAdd={onAdd} />
+                        <ItemCount initial={1} stock={item.stock} onAdd={onAdd} />
                         </Card.Body>
                         </Card>
                         </ListGroup.Item>

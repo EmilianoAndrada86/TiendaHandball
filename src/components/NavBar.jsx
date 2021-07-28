@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap';
 import CartWidget from './CartWidget';
+import {Link,NavLink} from 'react-router-dom'
 
 export default function NavBar(){
     return(
@@ -13,13 +14,14 @@ export default function NavBar(){
       style={{ maxHeight: '100px' }}
       navbarScroll
     >
-      <Nav.Link href="#action1">Inicio</Nav.Link>
+      <NavLink to="/">Inicio</NavLink>
       <Nav.Link href="#action2">Galeria</Nav.Link>
       <NavDropdown title="Productos" id="navbarScrollingDropdown">
         <NavDropdown.Item href="#action3">Zapatillas</NavDropdown.Item>
         <NavDropdown.Item href="#action4">Remeras</NavDropdown.Item>
-        <NavDropdown.Divider />
         <NavDropdown.Item href="#action5">Arqueros</NavDropdown.Item>
+        <NavDropdown.Item href="#action5">Medias</NavDropdown.Item>
+        <NavDropdown.Item href="#action5">Protectores</NavDropdown.Item>
       </NavDropdown>
       <Nav.Link href="#" disabled>
         ¿Que Buscas?
