@@ -1,7 +1,7 @@
 import React from 'react'
 import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap';
 import CartWidget from './CartWidget';
-import {Link,NavLink} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 
 export default function NavBar(){
     return(
@@ -14,14 +14,13 @@ export default function NavBar(){
       style={{ maxHeight: '100px' }}
       navbarScroll
     >
-      <NavLink to="/">Inicio</NavLink>
-      <Nav.Link href="#action2">Galeria</Nav.Link>
+      <Nav.Link as={Link} to="/">Inicio</Nav.Link>
       <NavDropdown title="Productos" id="navbarScrollingDropdown">
-        <NavDropdown.Item href="#action3">Zapatillas</NavDropdown.Item>
-        <NavDropdown.Item href="#action4">Remeras</NavDropdown.Item>
-        <NavDropdown.Item href="#action5">Arqueros</NavDropdown.Item>
-        <NavDropdown.Item href="#action5">Medias</NavDropdown.Item>
-        <NavDropdown.Item href="#action5">Protectores</NavDropdown.Item>
+        <NavDropdown.Item as={Link} to={`/category/${1}`}>Zapatillas</NavDropdown.Item>
+        <NavDropdown.Item as={Link} to={`/category/${2}`}>Remeras</NavDropdown.Item>
+        <NavDropdown.Item as={Link} to={`/category/${3}`}>Arqueros</NavDropdown.Item>
+        <NavDropdown.Item as={Link} to={`/category/${4}`}>Medias</NavDropdown.Item>
+        <NavDropdown.Item as={Link} to={`/category/${5}`}>Protectores</NavDropdown.Item>
       </NavDropdown>
       <Nav.Link href="#" disabled>
         ¿Que Buscas?

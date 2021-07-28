@@ -1,32 +1,42 @@
 {"articulos": [
 { "id":1,
-    "nombre":"Zapatiilas",
+    "nombre":"Zapatillas",
     "stock":5,
     "url":"/img/zapas.jpeg",
-    "desc":"Altas Zapas"
+    "desc":"Altas Zapas",
+    "cat":1,
+    "nomcat": "Zapatillas"
 },
 { "id":2,
     "nombre":"Camiseta",
     "stock":3,
     "url":"/img/camiseta.jpg",
-    "desc":"Altas Camiseta"
+    "desc":"Altas Camiseta",
+    "cat":2,
+    "nomcat": "Camisetas"
 },
 { "id":3,
     "nombre":"Arquero",
     "stock":8,
     "url":"/img/arquero.jpg",
-    "desc":"Alto Arquero"
+    "desc":"Alto Arquero",
+    "cat":3,
+    "nomcat": "Arquero"
 },
 { "id":4,
     "nombre":"Medias",
     "stock":1,
     "url":"/img/medias.jpg",
-    "desc":"Altas Medias"
+    "desc":"Altas Medias",
+    "cat":4,
+    "nomcat": "Medias"
 },
 {   "id":5,
     "nombre":"Protectores",
     "stock":6,
     "url":"/img/protectores.jpg",
-    "desc":"Altas Huevera"
+    "desc":"Altas Huevera",
+    "cat":5,
+    "nomcat": "Protectores"
 }
 ]}
