@@ -1,5 +1,4 @@
-import {ListGroup,Card,Button} from 'react-bootstrap';
-import Item from './Item';
+import {Container,Row} from 'react-bootstrap';
 import Itemlist from './ItemsList';
 
 function ItemListContainer(props) {
@@ -7,9 +6,11 @@ function ItemListContainer(props) {
     return(
 <>
   <h1 className="text-center">Productos</h1>      
-<ListGroup horizontal >
+<Container fluid >
+  <Row>
   <Itemlist />
-</ListGroup>
+  </Row>
+</Container>
  
  </> 
 

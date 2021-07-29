@@ -1,4 +1,4 @@
-import {Image} from 'react-bootstrap';
+
 
 const imgStyle = {
     height: "10%",
@@ -9,7 +9,7 @@ const imgStyle = {
 function CartWidget() {
     return(
         
-         <img src={process.env.PUBLIC_URL + "/img/cart.jpg"} style={imgStyle} />
+         <img src={process.env.PUBLIC_URL + "/img/cart.jpg"} alt ="" style={imgStyle} />
     )
 
 
