@@ -1,10 +1,16 @@
-import {ListGroup,Card,CardGroup} from 'react-bootstrap'
+import { useState } from 'react'
+import {ListGroup,Card,CardGroup, Button} from 'react-bootstrap'
 import ItemCount from './ItemCount'
+import {Link} from 'react-router-dom'
 
 function ItemDetail({item}){ 
+    
+    const [compra, setCompra] = useState()
     function onAdd(cantidadAgregada,producto){
         alert("Has agregado "+cantidadAgregada+" del producto")
-         }
+    }
+        
+    
     return(
     
         <CardGroup>
@@ -14,7 +20,7 @@ function ItemDetail({item}){
                         <Card.Body>
                         <Card.Title>{item.nombre}</Card.Title>
                         <Card.Text>{item.desc}</Card.Text>
-                        <ItemCount initial={1} stock={item.stock} onAdd={onAdd} />
+                        {compra===5?<Button variant="primary" as={Link} to="/cart" >Finalizar Compra</Button>:<ItemCount initial={1} stock={item.stock} onAdd={onAdd} setCompra={setCompra} />}
                         </Card.Body>
                         </Card>
                         </ListGroup.Item>

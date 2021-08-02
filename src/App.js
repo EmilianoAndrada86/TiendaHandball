@@ -7,6 +7,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
  
+ 
   return (
     <Router>
     <NavBar />
