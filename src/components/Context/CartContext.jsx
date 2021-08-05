@@ -1,33 +1,20 @@
 import { useState } from "react";
 import { createContext } from "react"
-import Item from "../Item";
-export const Context = createContext();
+
+export const CContext = createContext();
 
 export default function CartContext({children}){
     const [carrito, setCarrito] = useState([]);
     
     const isInCart = (id)=>{
-        if(carrito.producto.find(obj=>obj.id===id))return true
+        if(carrito.find(obj=>obj.item.id===id))return true
         else return false
     }
-    const addItem =(cant)=>{
-        console.log("Agregaste Item")
-     /* let  Item={
-            "producto":{
-                "id":item.id,
-                "nombre":item.nombre,
-                "stock":item.stock,
-                "url":item.url,
-                "desc":item.desc,
-                "cat":item.cant,
-                "nomcat": item.nomcat
-            },
-            "cant":cant
-        }
-    console.log(Item)
-    isInCart(item.id)? alert("El producto ya a sido agregado al carrito"):carrito.push(Item)*/
+    function addItem(item,cant){
+        
+     isInCart(item.id)? alert("Ya esta el producto en el carro de compras"):carrito.push({item,cant})
     }
-    const clearItems = ()=>{
+    function clearItems(){
         setCarrito([])
     }
 
@@ -36,9 +23,9 @@ export default function CartContext({children}){
 
 
     return(
-        <Context.Provider value={{addItem,clearItems,carrito}}>
+        <CContext.Provider value={{carrito,addItem,clearItems}}>
             {children}
-        </Context.Provider>
+        </CContext.Provider>
 
     )
 
