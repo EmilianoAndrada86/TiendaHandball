@@ -2,12 +2,15 @@ import { useState } from 'react'
 import {ListGroup,Card,CardGroup, Button} from 'react-bootstrap'
 import ItemCount from './ItemCount'
 import {Link} from 'react-router-dom'
+import { useContext } from 'react'
+import {Context} from './Context/CartContext'
 
 function ItemDetail({item}){ 
-    
+    const {add,clear,prod} = useContext(Context)
     const [compra, setCompra] = useState()
     function onAdd(cantidadAgregada,producto){
         alert("Has agregado "+cantidadAgregada+" del producto")
+        add(1)
     }
         
     
