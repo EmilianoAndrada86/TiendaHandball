@@ -2,8 +2,11 @@ import React from 'react'
 import { Navbar,Nav,NavDropdown,Form,FormControl,Button } from 'react-bootstrap';
 import CartWidget from './CartWidget';
 import {Link} from 'react-router-dom'
+import { useContext } from 'react';
+import {CContext} from './Context/CartContext'
 
 export default function NavBar(){
+  const {carrito,addItem,clearItems}  = useContext(CContext)
     return(
         <Navbar bg="light" expand="lg">
   <Navbar.Brand href="#">Tienda Handball</Navbar.Brand>
@@ -34,9 +37,9 @@ export default function NavBar(){
         aria-label="Search"
       />
       <Button variant="outline-success">Buscar</Button>
-      <CartWidget />
     </Form>
   </Navbar.Collapse>
+  {carrito.length===0?<p>No hay items en el Carrito</p>:<CartWidget items={carrito} />}
 </Navbar>
 
 

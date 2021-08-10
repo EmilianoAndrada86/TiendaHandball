@@ -30,7 +30,6 @@ function GetItems(){
 
 
 function Itemlist(props){
-    console.log(GetKey())
     return(
        GetItems().map(it=>{ return (<Item item={it} />)})
     )     
