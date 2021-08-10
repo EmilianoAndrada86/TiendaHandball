@@ -13,7 +13,6 @@ function CartWidget(props) {
       return(
        <>
        <Link to={"/cart"}><img  src={process.env.PUBLIC_URL + "/img/cart.jpg"} alt ="" style={imgStyle} />{props.items.length}</Link> 
-        
         </>
       )
            
