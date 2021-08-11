@@ -19,15 +19,15 @@ return(
             </tr>
         </thead>
         {carrito.map(art=>{
-            precioTotal=precioTotal+100*art.cant
+            precioTotal=precioTotal+art.item.precio*art.cant
             return(
                 <tbody>
                 <tr>
                     <td>{art.item.id}</td>
                     <td>{art.item.nombre}</td>
                     <td>{art.cant}</td>
-                    <td>{100}</td>
-                    <td>{100*art.cant}</td>
+                    <td>{art.item.precio}</td>
+                    <td>{art.item.precio*art.cant}</td>
                 </tr>
                 </tbody>
         )})}

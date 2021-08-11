@@ -1,28 +1,30 @@
 import { useState } from 'react';
-import productos from'../articulos.json'
 import Item from './Item';
 import { useEffect } from 'react';
 import {useParams} from 'react-router-dom'
+import {getFirestore} from '../services/fireBaeService'
 
 function GetKey(){
     let {id} = useParams()
     return id
 }
 function GetItems(){
-    const[art, setArt] = new useState([1,2]);
-    useEffect(()=>{
-        const task = new Promise((resolve,reject)=>{
-            setTimeout(()=>{
-                resolve(productos)
-            },3000)
-        })  
-        task.then((productos)=>{setArt(productos.articulos)})
+    const[art, setArt] = new useState([]);
+    useEffect(()=>{    
+    const db=getFirestore()
+    const Itemcollection = db.collection("Items")
+    Itemcollection.get().then((query)=>{
+        if(query.size===0){
+            console.log("No result");
+        }
+        setArt(query.docs.map(doc=>{return {"id":doc.id,"datos":doc.data()}}))
+    }).catch(error=>{console.log("Error= ",error);})
    },[])  
    if(GetKey()==null){
-    return art;
+    return art
    }else{
     var aCategorias = []
-    art.map(res=>{if(res.cat==GetKey())aCategorias.push(res)})
+    art.map(res=>{if(res.datos.cat==GetKey())aCategorias.push(res)})
    }
    return aCategorias;
    

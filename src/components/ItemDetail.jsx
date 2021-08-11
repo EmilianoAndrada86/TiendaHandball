@@ -25,6 +25,7 @@ function ItemDetail({item}){
                         <Card.Body>
                         <Card.Title>{item.nombre}</Card.Title>
                         <Card.Text>{item.desc}</Card.Text>
+                        <Card.Text>{"$"+item.precio}</Card.Text>
                         {compra===5?<Button variant="primary" as={Link} to="/cart" >Finalizar Compra</Button>:<ItemCount initial={1} stock={item.stock} onAdd={onAdd} setCompra={setCompra} />}
                         </Card.Body>
                         </Card>
