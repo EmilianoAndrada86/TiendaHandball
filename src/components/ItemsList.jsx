@@ -3,6 +3,7 @@ import Item from './Item';
 import { useEffect } from 'react';
 import {useParams} from 'react-router-dom'
 import {getFirestore} from '../services/fireBaeService'
+import { Container, Row } from 'react-bootstrap';
 
 function GetKey(){
     let {id} = useParams()
@@ -12,12 +13,14 @@ function GetItems(){
     const[art, setArt] = new useState([]);
     useEffect(()=>{    
     const db=getFirestore()
-    const Itemcollection = db.collection("Items")
+    const Itemcollection = db.collection("producto")
     Itemcollection.get().then((query)=>{
         if(query.size===0){
             console.log("No result");
         }
+        else{
         setArt(query.docs.map(doc=>{return {"id":doc.id,"datos":doc.data()}}))
+        }
     }).catch(error=>{console.log("Error= ",error);})
    },[])  
    if(GetKey()==null){
@@ -33,7 +36,12 @@ function GetItems(){
 
 function Itemlist(props){
     return(
-       GetItems().map(it=>{ return (<Item item={it} />)})
+    <Container fluid id="itemCoint">
+       
+        {GetItems().map(it=>{ return (<Item item={it} />)})}
+       
+    </Container>
+       
     )     
 }
 

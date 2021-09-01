@@ -13,7 +13,7 @@ function ItemCount ({initial,stock,onAdd,setCompra,producto}){
             <ListGroup.Item variant="primary"><Button variant="primary"  onClick={()=>{setCantidad(cantidad+1)}}>+</Button></ListGroup.Item>
             </ListGroup>
             <div className="row justify-content-center">
-            <Button className="text-center" variant="primary" size="lg" onClick={()=>{cantidad>stock ? alert("No hay suficiente stock"): onAdd(cantidad,producto);setCompra(cantidad)}}>Agregar Al Carrito</Button>
+            <Button className="text-center" variant="primary" size="lg" onClick={()=>{cantidad>stock ? alert("No hay suficiente stock solo quedan:"+stock): onAdd(cantidad,producto);setCompra(cantidad)}}>Agregar Al Carrito</Button>
             </div>
             
         </div>

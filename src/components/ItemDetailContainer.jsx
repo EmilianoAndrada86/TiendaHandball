@@ -9,10 +9,10 @@ const GetITem=(key)=>{
     const [item,setItem] = useState([]);
         useEffect(()=>{
             const db=getFirestore()
-            const Itemcollection = db.collection("Items")
+            const Itemcollection = db.collection("producto")
             Itemcollection.get().then((query)=>{query.docs.map(data=>{if(data.id==key){setItem(data.data())}} )})
            
-        })    
+        },[])    
              return item
         }
 function GetKey(){

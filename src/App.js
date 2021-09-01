@@ -1,4 +1,3 @@
-import {useContext} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './components/NavBar';
 import './App.css';
@@ -12,6 +11,7 @@ function App() {
  
  
   return (
+    
     <CartContext>
     <Router>
     <NavBar />
@@ -26,7 +26,7 @@ function App() {
     <ItemDetailContainer />
     </Route >
     <Route path="/cart"> 
-      <Cart />
+    <Cart />
     </Route>
     </Switch>
     </Router>

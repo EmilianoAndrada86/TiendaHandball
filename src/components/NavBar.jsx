@@ -8,8 +8,9 @@ import {CContext} from './Context/CartContext'
 export default function NavBar(){
   const {carrito,addItem,clearItems}  = useContext(CContext)
     return(
-        <Navbar bg="light" expand="lg">
-  <Navbar.Brand href="#">Tienda Handball</Navbar.Brand>
+  <>
+  <div id="Logo">Tienda Handball</div>
+  <Navbar bg="dark" variant="dark" expand="lg">
   <Navbar.Toggle aria-controls="navbarScroll" />
   <Navbar.Collapse id="navbarScroll">
     <Nav
@@ -25,23 +26,11 @@ export default function NavBar(){
         <NavDropdown.Item as={Link} to={`/category/${4}`}>Medias</NavDropdown.Item>
         <NavDropdown.Item as={Link} to={`/category/${5}`}>Protectores</NavDropdown.Item>
       </NavDropdown>
-      <Nav.Link href="#" disabled>
-        ¿Que Buscas?
-      </Nav.Link>
     </Nav>
-    <Form className="d-flex">
-      <FormControl
-        type="search"
-        placeholder="Search"
-        className="mr-2"
-        aria-label="Search"
-      />
-      <Button variant="outline-success">Buscar</Button>
-    </Form>
+    {carrito.length===0?<span>No hay items en el Carrito</span>:<CartWidget/>}
   </Navbar.Collapse>
-  {carrito.length===0?<p>No hay items en el Carrito</p>:<CartWidget items={carrito} />}
 </Navbar>
-
+</>
 
 
     )

@@ -1,4 +1,7 @@
 import { Link } from "react-router-dom";
+import { Badge } from "react-bootstrap";
+import { useContext } from 'react';
+import {CContext} from './Context/CartContext'
 
 const imgStyle = {
     height: "100%",
@@ -7,12 +10,14 @@ const imgStyle = {
 
 
 
-function CartWidget(props) {
 
-    console.log(props)
+
+function CartWidget() {
+  
+      const {contador}  = useContext(CContext)
       return(
        <>
-       <Link to={"/cart"}><img  src={process.env.PUBLIC_URL + "/img/cart.jpg"} alt ="" style={imgStyle} />{props.items.length}</Link> 
+       <Link to={"/cart"}><img  src={process.env.PUBLIC_URL + "/img/cart.jpg"} alt ="" style={imgStyle} />{contador}</Link>
         </>
       )
            

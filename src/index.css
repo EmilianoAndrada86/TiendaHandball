@@ -5,9 +5,33 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+    
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+div{
+  font-family: 'Open Sans', sans-serif;
+}
+#Titulo{
+  color: red;
+}
+.home{
+  display: flex;
+}
+#itemCoint{
+  display:  flex;
+  width: 100%;
+  padding: 10px;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.col{
+  padding:  5px;
+}
+#Logo{
+  color: #fff; font-size: 100px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; background-color:#333333;
+}
+
